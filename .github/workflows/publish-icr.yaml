@@ -12,7 +12,7 @@ jobs:
     name: Build and push image to registry
     runs-on: ubuntu-latest
     env:
-      ICR_NAMESPACE: solution-tutorial
+      ICR_NAMESPACE: solution-tutorials
       ICR_REPOSITORY: tutorial-serverless-api-webapp
     steps:
       - name: Check out the repo

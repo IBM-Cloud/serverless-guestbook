@@ -1,7 +1,7 @@
 {
   "name": "serverless-api-webapp",
   "main": "server.js",
-  "description": "Backend app serving an API as serverless backend",
+  "description": "Solution tutorial: Backend app serving an API as serverless backend",
   "version": "0.1.0",
   "private": false,
   "scripts": {
