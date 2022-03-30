@@ -1,8 +1,9 @@
 name: Publish container image
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - ce
 
 jobs:
   publish_to_registry:
