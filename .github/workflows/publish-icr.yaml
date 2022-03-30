@@ -1,8 +1,11 @@
 name: Publish container image
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - ce
+    paths:
+      - backend
 
 jobs:
   publish_to_registry:
@@ -33,5 +36,5 @@ jobs:
         with:
           context: backend
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: latest
           labels: ${{ steps.meta.outputs.labels }}
