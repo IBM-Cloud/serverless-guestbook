@@ -3,8 +3,6 @@ name: Publish container image
 on:
   release:
     types: [published]
-  workflow_dispatch:
-
 
 jobs:
   publish_to_registry:
