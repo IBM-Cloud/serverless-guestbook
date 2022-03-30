@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - ce
+    paths:
+      - backend
 
 jobs:
   publish_to_registry:
