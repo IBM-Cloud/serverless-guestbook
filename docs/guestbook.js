@@ -1,13 +1,16 @@
 /**
  * Web application
  */
-const apiUrl = 'https://CHANGEME.us-south.apigw.appdomain.cloud/guestbook';
+const apiUrl = 'https://guestbook.ksstpf832n4.us-south.codeengine.appdomain.cloud';
+
+// for local testing
+//const apiUrl = 'http://localhost:8080';
 const guestbook = {
   // retrieve the existing guestbook entries
   get() {
     return $.ajax({
       type: 'GET',
-      url: `${apiUrl}/entries`,
+      url: `${apiUrl}/guestbook/entries`,
       dataType: 'json'
     });
   },
@@ -15,8 +18,8 @@ const guestbook = {
   add(name, email, comment) {
     console.log('Sending', name, email, comment)
     return $.ajax({
-      type: 'PUT',
-      url: `${apiUrl}/entries`,
+      type: 'POST',
+      url: `${apiUrl}/guestbook/entries`,
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({
         name,
@@ -44,7 +47,8 @@ const guestbook = {
       if (!result.entries) {
         return;
       }
-
+      
+      result.entries.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
       const context = {
         entries: result.entries
       }
