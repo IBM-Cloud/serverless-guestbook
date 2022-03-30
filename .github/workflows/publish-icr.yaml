@@ -5,7 +5,7 @@ on:
     branches:
       - ce
     paths:
-      - backend
+      - 'backend/**'
 
 jobs:
   publish_to_registry:
