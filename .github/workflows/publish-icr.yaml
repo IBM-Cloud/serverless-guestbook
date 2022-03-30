@@ -36,6 +36,6 @@ jobs:
         with:
           context: backend
           push: true
-          tags: icr.io/${{ env.ICR_NAMESPACE }}/${{ env.ICR_REPOSITORY }}:1
+          tags: icr.io/${{ env.ICR_NAMESPACE }}/${{ env.ICR_REPOSITORY }}:latest
           labels: ${{ steps.meta.outputs.labels }}
 
