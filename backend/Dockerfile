@@ -6,7 +6,7 @@ ADD server.js /app/
 
 RUN cd /app; npm ci --only=production
 
-FROM gcr.io/distroless/nodejs:20
+FROM gcr.io/distroless/nodejs20-debian12
 COPY --from=build-env /app /app
 WORKDIR /app
 ENV PORT 8080
